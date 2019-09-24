@@ -5,6 +5,9 @@ $(document).ready(function() {
     var losses = 0;
     $(".wins-text").text("Your wins: " + wins);
     $(".losses-text").text("Your losses: " + losses);
+
+    var aud = document.getElementById("myAudio");
+    aud.volume = 0.05; // default 1 means 100%
     
     //Array of different gem images
     var gemImages = ["./assets/images/blue-teardrop-gem.png", "./assets/images/red-square-gem.png", "./assets/images/purple-hexagon-gem.png", "./assets/images/green-heart-gem.png"];
@@ -25,7 +28,6 @@ $(document).ready(function() {
 
     function playGame() {
 
-        
         var counter = 0;
         $(".your-guess").text("Your points: " + counter); 
 
