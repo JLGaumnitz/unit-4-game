@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-    //Variables
+// ===============================================================
+//VARIABLES
+// ===============================================================
     var wins = 0;
     var losses = 0;
     $(".wins-text").text("Your wins: " + wins);
@@ -9,19 +11,28 @@ $(document).ready(function() {
     var aud = document.getElementById("myAudio");
     aud.volume = 0.05; // default 1 means 100%
     
-    //Array of different gem images
-    var gemImages = ["./assets/images/blue-teardrop-gem.png", "./assets/images/red-square-gem.png", "./assets/images/purple-hexagon-gem.png", "./assets/images/green-heart-gem.png"];
-    
-    //Assigning random number to each gem
-    function gemValues() {
+    //Array of four crystal images
+    var crystalImages = [
+        "./assets/images/blue-teardrop-crystal.png", 
+        "./assets/images/red-square-crystal.png", 
+        "./assets/images/purple-hexagon-crystal.png", 
+        "./assets/images/green-heart-crystal.png"
+    ];
 
-        for (var i = 0; i < gemImages.length; i++) {
+// ===============================================================
+//FUNCTIONS
+// ===============================================================
+    //Assigning random number to each crystal
+    function crystalValues() {
+
+        for (var i = 0; i < crystalImages.length; i++) {
         
             var image = $("<img>");
-            image.addClass("gem-buttons gem gem-image");
-            image.attr("src", gemImages[i]);
+            image.addClass("crystal-buttons crystal crystal-image");
+            image.attr("src", crystalImages[i]);
+            //Assigns a random value between 1 and 12
             image.attr("data-letter", Math.floor(Math.random() * 12) +1);
-            $("#gems").append(image);
+            $("#crystals").append(image);
         }
 
     }
@@ -29,53 +40,52 @@ $(document).ready(function() {
     function playGame() {
 
         var counter = 0;
-        $(".your-guess").text("Your points: " + counter); 
+        $(".your-points").text("Your points: " + counter); 
 
-        //Generates random number 
+        //Generates random number between 19 and 120 
         var targetNumber = Math.floor(Math.random() * (120-19) + 19);
             
-        //And displays it on the browser
-        $(".number-to-guess").text("Target number: " + targetNumber);
-            console.log(targetNumber);
+        //And displays it in the HTML page at "target-number"
+        $(".target-number").text("Target number: " + targetNumber);
+            console.log("Target number is :" + targetNumber);
 
-        //When user clicks on a gem 
-        $(".gem-buttons").on("click", function() {
+        //When user clicks on a crystal 
+        $(".crystal-buttons").on("click", function() {
             
         //Assigns random number to each click
+            crystalIsClicked = true;
+            var crystalValue = ($(this).attr("data-letter"));
+            crystalValue = parseInt(crystalValue);
+        //Adds every click to global counter
+            counter += crystalValue;
             
-            gemIsClicked = true;
-            var gemValue = ($(this).attr("data-letter"));
-            gemValue = parseInt(gemValue);
-            //Adds every click to global counter
-            counter += gemValue;
+            console.log("Crystal value clicked is: " + crystalValue);
+            console.log("Counter is currently: " + counter);
             
-            console.log(gemValue);
-            console.log(counter);
-            
-            $(".your-guess").text("Your points: " + counter);
+            $(".your-points").text("Your points: " + counter);
             
             if (counter === targetNumber) {
-            alert("You win!");
+            alert("Congratulations! You won. Your mind is crystal clear!");
             wins++;
             $(".wins-text").text("Your wins: " + wins);
-            $("#gems").empty();
-            gemValues();
+            $("#crystals").empty();
+            crystalValues();
             playGame();
             }
             
             else if (counter >= targetNumber) {
-            alert("You lose!");
+            alert("I'm sorry. You have gone over the target number. Please try again.");
             losses++;
             $(".losses-text").text("Your losses: " + losses);
-            $("#gems").empty();
-            gemValues();
+            $("#crystals").empty();
+            crystalValues();
             playGame();
             }
             
         });
     }
     
-    gemValues();
+    crystalValues();
     playGame();
 
 });
