@@ -22,7 +22,8 @@ $(document).ready(function() {
 // ===============================================================
 //FUNCTIONS
 // ===============================================================
-    //Assigning random number to each crystal
+
+//Assigning random number to each crystal
     function crystalValues() {
 
         for (var i = 0; i < crystalImages.length; i++) {
@@ -30,24 +31,23 @@ $(document).ready(function() {
             var image = $("<img>");
             image.addClass("crystal-buttons crystal crystal-image");
             image.attr("src", crystalImages[i]);
-            //Assigns a random value between 1 and 12
+            //Assigns a random value between 1 and 12 to each crystal
             image.attr("data-letter", Math.floor(Math.random() * 12) +1);
             $("#crystals").append(image);
         }
-
-    }
+     }
 
     function playGame() {
 
         var counter = 0;
         $(".your-points").text("Your points: " + counter); 
 
-        //Generates random number between 19 and 120 
+        //Generates random number between 19 and 120, known as the Target Number 
         var targetNumber = Math.floor(Math.random() * (120-19) + 19);
             
         //And displays it in the HTML page at "target-number"
         $(".target-number").text("Target number: " + targetNumber);
-            console.log("Target number is :" + targetNumber);
+            console.log("Target number is: " + targetNumber);
 
         //When user clicks on a crystal 
         $(".crystal-buttons").on("click", function() {
@@ -65,27 +65,30 @@ $(document).ready(function() {
             $(".your-points").text("Your points: " + counter);
             
             if (counter === targetNumber) {
-            alert("Congratulations! You won. Your mind is crystal clear!");
-            wins++;
-            $(".wins-text").text("Your wins: " + wins);
-            $("#crystals").empty();
-            crystalValues();
-            playGame();
+                wins++;
+                $(".wins-text").text("Your wins: " + wins);
+                $("#crystals").empty();
+                crystalValues();
+                playGame();
+                $("#winModal").modal("show");
             }
             
             else if (counter >= targetNumber) {
-            alert("I'm sorry. You have gone over the target number. Please try again.");
+            // alert("So sorry. You have gone over the target number. Please try again.");
             losses++;
             $(".losses-text").text("Your losses: " + losses);
             $("#crystals").empty();
             crystalValues();
             playGame();
-            }
+            $("#lossModal").modal("show");
+        }
             
         });
     }
-    
+
+    // Calling functions
     crystalValues();
     playGame();
+
 
 });

@@ -14,6 +14,21 @@ h1 {
     padding: 5px;
 }
 
+.modal-header {
+    font-family: "Architects Daughter", cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #a11111;  
+}
+
+.modal-body {
+    font-family: "Architects Daughter", cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #a11111;
+    text-align: center;
+}
+
 p {
     font-family: "Architects Daughter", cursive;
     font-size: 25px;
