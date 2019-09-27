@@ -2,7 +2,7 @@
 Crystal Collector Challenge
 created by Jennifer Gaumnitz
 
-<!-- What the project does -->
+WHAT THE PROJECT DOES
 
  Here's how this game works:
 
@@ -23,16 +23,20 @@ created by Jennifer Gaumnitz
 
    * When a new round begins again, the player sees a new random number, and all the crystals have four new hidden values. The user's points resets to 0.
 
-There is background music, although Chrome sometimes won't play it. It's called "Adventure" from Bensound (credit and link at the bottom of the screen).
+  There is background music, although Chrome sometimes won't play it. It's called "Adventure" from Bensound (credit and link at the bottom of the screen).
 
-<!-- Why the project is useful -->
-The game fulfills a homework assignment for University of Kansas Boot Camp, August 2019 to February 2020. Besides working with creating random numbers and assigning them to elements, the assignment also taught me how to use modals in Bootstrap.
+WHY THE PROJECT IS USEFUL
 
-<!-- How users can get started with the project -->
-Just play the game. Not as fun as Pokemon Go, for sure.
+  The game fulfills a homework assignment for University of Kansas Boot Camp, August 2019 to February 2020. Besides working with creating random numbers and assigning them to elements, the assignment also taught me how to use modals in Bootstrap.
 
-<!-- Where users can get help with your project -->
-Questions? Contact me at jlgaumnitz@gmail.com
+HOW YOU CAN GET STARTED WITH THE PROJECT
 
-<!-- Who maintains and contributes to the project -->
-Only me, and I probably won't update it again after turning in the assignment. 
+  Just play the game. Not as fun as Pokemon Go, for sure, but it's functional!
+
+WHERE USERS CAN GET HELP WITH THE PROJECT
+
+  Questions? Contact me at jlgaumnitz@gmail.com
+
+WHO MAINTAINS AND CONTRIBUTES TO THE PROJECT
+
+  Only I do, and I probably won't update it again after completing this assignment. 
