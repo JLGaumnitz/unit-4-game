@@ -13,10 +13,10 @@ $(document).ready(function() {
     
     //Array of four crystal images
     var crystalImages = [
-        "./assets/images/blue-teardrop-crystal.png", 
-        "./assets/images/red-square-crystal.png", 
-        "./assets/images/purple-hexagon-crystal.png", 
-        "./assets/images/green-heart-crystal.png"
+        "assets/images/blue-teardrop-crystal.png", 
+        "assets/images/red-square-crystal.png", 
+        "assets/images/purple-hexagon-crystal.png", 
+        "assets/images/green-heart-crystal.png"
     ];
 
 // ===============================================================
